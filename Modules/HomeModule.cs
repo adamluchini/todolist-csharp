@@ -46,7 +46,12 @@ namespace ToDoList
 
       Post["/tasks/delete"] = _ => {
         Task.DeleteAll();
-        return View["cleared.cshtml"];
+        return View["tasks_cleared.cshtml"];
+      };
+
+      Post["/categories/delete"] = _ =>{
+        Category.DeleteAll();
+        return View["categories_cleared.cshtml"];
       };
 
       Get["/categories/{id}"] = parameters => {
