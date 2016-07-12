@@ -86,11 +86,12 @@ namespace ToDoList
       //Arrange
       Category testCategory = new Category("Household chores");
       testCategory.Save();
+      DateTime? taskDate = new DateTime(2016, 7, 12);
 
       //Act
-      Task firstTask = new Task ("Mow the lawn", testCategory.GetId());
+      Task firstTask = new Task ("Mow the lawn", taskDate, testCategory.GetId());
       firstTask.Save();
-      Task secondTask = new Task("Do the dishes", testCategory.GetId());
+      Task secondTask = new Task("Do the dishes", taskDate, testCategory.GetId());
       secondTask.Save();
 
       List<Task> testTaskList = new List<Task> {firstTask, secondTask};
